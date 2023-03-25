@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     $.getJSON({
-        url: "http://localhost:5000/bookingData",
+        url: "https://jqery-server-site.vercel.app/bookingData",
         dataType: "json",
         success: function(data) { 
           $.map(data, function(collection) {
@@ -24,7 +24,7 @@ $(document).ready(function(){
               const id = `${collection._id}`;
               console.log(id)
               $.ajax({
-                url: `http://localhost:5000/bookingData/?id=${id}`,
+                url: `https://jqery-server-site.vercel.app/bookingData/?id=${id}`,
                 dataType: "json",
                 success: function(data) {
                   const params = new URLSearchParams(window.location.href=`/collection.html?id/${id}`);
@@ -55,7 +55,7 @@ $(document).ready(function(){
 
     // $(document).on('click', '.collection-button', function() {
     //   const id = $(this).data('id');
-    //   $.getJSON(`http://localhost:5000/collectionData?id=${id}`, function(data) {
+    //   $.getJSON(`https://jqery-server-site.vercel.app/collectionData?id=${id}`, function(data) {
         
     //     $('#collection-content').load(`/collection.html?${$.param(data)}`);
     //     console.log(data)
